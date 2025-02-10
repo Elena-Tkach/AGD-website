@@ -1,38 +1,30 @@
 <?php
-// Инициализация переменных
-$response = array('success' => false, 'message' => 'Ошибка отправки данных');
+$response = array('success' => false, 'message' => 'Data submission error.');
 
-// Проверка данных
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $name = trim($_POST['name']);
     $phone = trim($_POST['phone']);
     $message = trim($_POST['message']);
 
-    // Простейшая валидация
-    if (empty($name) || empty($phone)) {
-        $response['message'] = 'Поля с звездочкой обязательны для заполнения.';
-    } elseif (!preg_match('/^\+?[0-9]{1,15}$/', $phone)) {
-        $response['message'] = 'Неверный формат телефона. Верный форма: 8 (___) ___-__-__"';
+    if (!preg_match('/^\+?[0-9]{1,15}$/', $phone)) {
+        $response['message'] = 'Invalid phone number format. Please enter numbers only."';
     } else {
-        // Обработка данных (например, отправка email)
+
         $to = "tcachelena@gmail.com"; // Укажите ваш email
         $subject = "Новое сообщение с сайта";
 
-        // Оформляем тело письма с правильной кодировкой
-        $body = "Имя: $name\nТелефон: $phone\nСообщение:\n$message";
+        $body = "Name: $name\nPhone: $phone\nMessage:\n$message";
 
-        // Заголовки для отправки письма с кодировкой UTF-8
         $headers = "MIME-Version: 1.0" . "\r\n";
         $headers .= "Content-type: text/plain; charset=UTF-8" . "\r\n";
         $headers .= "From: AGD@yourdomain.com" . "\r\n";
         $headers .= "Reply-To: $name <$phone>" . "\r\n";
 
-        // Отправка письма
         if (mail($to, $subject, $body, $headers)) {
             $response['success'] = true;
-            $response['message'] = 'Спасибо за ваше сообщение! Мы свяжемся с вами в ближайшее время.';
+            $response['message'] = 'Thank you for your message! We will get in touch with you shortly.';
         } else {
-            $response['message'] = 'Произошла ошибка при отправке сообщения. Пожалуйста, попробуйте позже.';
+            $response['message'] = 'An error occurred while sending the message. Please try again later.';
         }
     }
 

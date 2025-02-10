@@ -16,22 +16,18 @@ export const sendMail = () => {
       .then((response) => response.json())
       .then((data) => {
         if (data.success) {
-          // onShowMenu(popup);
-          console.log("ok", data.message);
           document.getElementById("response-message").innerHTML =
             `<p style="color: green;">${data.message}</p>`;
           document.querySelector(".js-form").reset();
         } else {
-          console.log("Else", data.message);
           document.getElementById("response-message").innerHTML =
             `<p style="color: red;">${data.message}</p>`;
         }
         document.getElementById("response-message").style.display = "block";
       })
       .catch((error) => {
-        console.log("error", error);
         document.getElementById("response-message").innerHTML =
-          `<p style="color: red;">Произошла ошибка. Пожалуйста, попробуйте позже.</p>`;
+          `<p style="color: red;">An error occurred while sending the message. Please try again later.</p>`;
         document.getElementById("response-message").style.display = "block";
       });
   });
