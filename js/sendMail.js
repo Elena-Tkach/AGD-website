@@ -33,7 +33,9 @@ export const sendMail = () => {
         .then((response) => response.json())
         .then((data) => {
           if (data.success) {
-            onShowMenu(popup);
+            // onShowMenu(popup);
+            document.getElementById("response-message").innerHTML =
+              `<p style="color: red;">${data.message}</p>`;
             document.querySelector(".js-form").reset();
           } else {
             console.log("Else", data.message);
