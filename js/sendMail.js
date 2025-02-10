@@ -5,9 +5,9 @@ export const sendMail = () => {
       event.preventDefault();
 
       const formData = new FormData();
-      formData.append("name", name);
-      formData.append("phone", phone);
-      formData.append("message", message);
+      //   formData.append("name", name);
+      //   formData.append("phone", phone);
+      //   formData.append("message", message);
 
       fetch("/inc/submit-form.php", {
         method: "POST",
