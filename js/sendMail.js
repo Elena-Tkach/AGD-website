@@ -4,6 +4,11 @@ export const sendMail = () => {
     .addEventListener("submit", function (event) {
       event.preventDefault();
 
+      const formData = new FormData();
+      formData.append("name", name);
+      formData.append("phone", phone);
+      formData.append("message", message);
+
       fetch("/inc/submit-form.php", {
         method: "POST",
         body: formData,
