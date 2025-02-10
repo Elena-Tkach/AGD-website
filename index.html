@@ -388,11 +388,12 @@
 
                 <div class="action__form col px-lg-4 ">
                     <h3 class="fs-5 mb-1">Let’s Stay Connected!</h3>
-                    <p class="text mb-2">Have questions or need assistance? Leave your details, and we’ll get back to
+                    <p class="text mb-2 mb-lg-4">Have questions or need assistance? Leave your details, and we’ll get
+                        back to
                         you
                         promptly!
                     </p>
-                    <form action="/inc/submit-form.php" method="POST" class="js-form">
+                    <form action="/inc/submit-form.php" method="POST" class="js-form ">
                         <input class="form-control mb-2" type="text" id="name" name="name" placeholder="Enter your name"
                             required>
                         <input class="form-control mb-2" type="tel" id="phone" name="phone"
@@ -401,8 +402,8 @@
                             placeholder="Enter your email address" required>
                         <textarea class="form-control mb-3" id="message" name="message"
                             placeholder="How can we help you?" rows="4"></textarea>
-                            
-                        <div id="response-message"></div>
+
+                        <div id="response-message" class="mb-2"></div>
                         <div>
                             <button class="btn btn--font btn--main btn--main-bg " type="submit">
                                 Submit Your Details
