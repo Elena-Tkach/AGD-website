@@ -7,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $message = trim($_POST['message']);
 
     if (!preg_match('/^\+?[0-9]{1,15}$/', $phone)) {
-        $response['message'] = 'Invalid phone number format. Please enter numbers only."';
+        $response['message'] = 'Invalid phone number format. Please enter numbers only.';
     } else {
 
         $to = "tcachelena@gmail.com"; // Укажите ваш email
