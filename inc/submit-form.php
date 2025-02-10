@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // Заголовки для отправки письма с кодировкой UTF-8
         $headers = "MIME-Version: 1.0" . "\r\n";
         $headers .= "Content-type: text/plain; charset=UTF-8" . "\r\n";
-        $headers .= "From: Anwalt@yourdomain.com" . "\r\n";
+        $headers .= "From: AGD@yourdomain.com" . "\r\n";
         $headers .= "Reply-To: $name <$phone>" . "\r\n";
 
         // Отправка письма

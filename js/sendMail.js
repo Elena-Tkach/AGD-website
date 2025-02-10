@@ -4,28 +4,6 @@ export const sendMail = () => {
     .addEventListener("submit", function (event) {
       event.preventDefault();
 
-      //   // Получаем данные из формы
-      //   const name = document.querySelector(".js-name").value.trim();
-      //   const phone = document.querySelector(".js-phone").value.trim();
-      //   const message = document.querySelector(".js-message").value.trim();
-
-      //   let errors = [];
-
-      //   if (!phone) {
-      //     errors.push("Пожалуйста, введите телефон.");
-      //   } else if (!/^\+?[0-9]{1,15}$/.test(phone)) {
-      //     errors.push(
-      //       `Неверный формат телефона. Используйте только цифры.
-      // 	  Верный форма: 8 (___) ___-__-__`
-      //     );
-      //   }
-
-      //   // Если ошибок нет, отправляем данные на сервер
-      //   const formData = new FormData();
-      //   formData.append("name", name);
-      //   formData.append("phone", phone);
-      //   formData.append("message", message);
-
       fetch("/inc/submit-form.php", {
         method: "POST",
         body: formData,
@@ -34,8 +12,9 @@ export const sendMail = () => {
         .then((data) => {
           if (data.success) {
             // onShowMenu(popup);
+            console.log("ok", data.message);
             document.getElementById("response-message").innerHTML =
-              `<p style="color: red;">${data.message}</p>`;
+              `<p style="color: green;">${data.message}</p>`;
             document.querySelector(".js-form").reset();
           } else {
             console.log("Else", data.message);
