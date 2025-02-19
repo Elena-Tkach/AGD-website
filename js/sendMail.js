@@ -1,5 +1,5 @@
-export const sendMail = () => {
-  const formPage = document.querySelector(".js-form");
+export const sendMail = (formPage) => {
+
 
   formPage.addEventListener("submit", function (event) {
     event.preventDefault();

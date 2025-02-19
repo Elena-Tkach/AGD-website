@@ -9,6 +9,7 @@ export const swiper = (item, numSlide) => {
     pagination: {
       el: ".swiper-pagination",
       clickable: true,
+      // type: "fraction",
     },
     navigation: {
       nextEl: ".swiper-button-next",
