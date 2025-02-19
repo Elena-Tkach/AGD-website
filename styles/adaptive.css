@@ -162,7 +162,7 @@
   }
 
   .services--item {
-    width: 30%;
+    width: 45%;
     margin-right: 10px;
   }
 
@@ -212,5 +212,10 @@
 
   .portfolio-page .portfolio__img {
     height: 400px;
+  }
+
+  .services--item {
+    width: 24%;
+    margin-right: 10px;
   }
 }
