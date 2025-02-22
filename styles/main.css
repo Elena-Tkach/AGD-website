@@ -172,6 +172,17 @@
   background-image: url("/img/testimonials.webp");
 }
 
+.intro-bg-new {
+  background-image: url("/img/New-Constraction/2.jpg");
+}
+
+::marker {
+  color: var(--green-main);
+}
+
+.our-process ::marker {
+  font-size: 40px;
+}
 .intro-bg::before {
   content: "";
   position: absolute;
@@ -285,6 +296,10 @@
   padding: 2rem 5rem;
 }
 
+.construction .container-left::before {
+  left: 0%;
+  padding: 7rem 5rem;
+}
 .text {
   font-size: 0.8rem;
 }
@@ -381,7 +396,7 @@
   background-image: url("/img/pergola.webp");
 }
 .item-bg-6 {
-  background-image: url("/img/New\ Constraction/2.jpg");
+  background-image: url("/img/New-Constraction/2.jpg");
 }
 
 .portfolio__figure {
